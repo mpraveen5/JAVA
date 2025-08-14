@@ -1,0 +1,213 @@
+CHECK IF DIGITS ARE EVEN (2-DIGIT NO.)
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		Scanner s = new Scanner(System.in);
+		int a = s.nextInt();
+		int b = a/10;
+		int c = a%10;
+		
+		if (b%2 == 0){
+		    if (c%2 == 0)
+		        System.out.println("Both are even");
+		    else 
+		        System.out.println(b);
+		}
+		else if(c%2 == 0)
+		    System.out.println(c);
+		    
+		else
+		    System.out.println("No even numbers");
+	}
+}
+
+GREATEST OF 3 NUMBERS
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int a = s.nextInt();
+		int b = s.nextInt();
+		int c = s.nextInt();
+		
+		if (a>b && a>c)
+		    System.out.println(a);
+		else if (b>a && b>c)
+		    System.out.println(b);
+		else
+	        System.out.println(c);
+	}
+}
+
+CALCULATE TOTAL & AVERAGE FOR PASS STUDENTS
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int a=s.nextInt();
+		int b=s.nextInt();
+		int c=s.nextInt();
+		int d=s.nextInt();
+		int e=s.nextInt();
+		
+		if (a<35 || b<35 || c<35 || d<35 || e<35){
+		    System.out.println("Fail");
+		}
+		else{
+		    int Tot = (a+b+c+d+e);
+		    System.out.println("Total "+Tot);
+		    float Avg = (float) Tot/5;
+		    System.out.printf("Average %.2f%%",Avg);
+		}
+	}
+}
+
+FIND VOVEL OR CONSONANT
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		char a;
+		
+		char in = s.next().charAt(0);
+		
+		
+		if (in=='a' ||in=='e' || in=='i'|| in=='o'||in=='u'){
+		    System.out.print("Vowel");
+		}
+		else 
+		    System.out.print("Consonant");
+	}
+}
+
+SWITCH CASE ARITHMETIC OPERATION
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int a = s.nextInt();
+		int b = s.nextInt();
+		char in = s.next().charAt(0);
+		
+		switch(in){
+		    case '+':
+		       System.out.print(a+b);
+		       break;
+		    case '-':
+		        System.out.print(a-b);
+		        break;
+		    case '*':
+		        System.out.print(a*b);
+		        break;
+		    case '/':
+		        System.out.print(a/b);
+		        break;
+		    default :
+		        System.out.print("Invalid");
+		}
+	}
+}
+
+CONVERT INTO SMALL AND CAPITAL LETTER
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    char in = s.next().charAt(0);
+	    
+	    int x= (int)in;
+	    if(x>=97 && x<=122){
+	        System.out.printf("%C",in);
+	    }
+	    else if(x>=65 && x<=90){
+	        System.out.print((char)(in+32));
+	    }
+	}
+}
+
+	    if(in>='a' && in<='z'){
+	        System.out.print((char)(in-32));
+	    }
+	    else if(in>='A' && in<='Z'){
+	        System.out.print((char)(in+32));
+	    }
+
+VENDING MACHINE
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int i=0;
+	    while(i==0){
+	    System.out.println("Choose any\n1 - Juices\n2 - Chips\n3 - Chocolates");
+		Scanner s = new Scanner(System.in);
+		int a = s.nextInt();
+		if (a==1){
+		    System.out.println("Choose any\nA - Coke\nB - Pepsi\nC - Mountain Dew");
+		    char in = s.next().charAt(0);
+    		switch(in){
+    		    case 'A':
+    		       System.out.print("Here is ur Coke\n");
+    		       break;
+    		    case 'B':
+    		        System.out.print("Here is ur Pepsi\n");
+    		        break;
+    		    case 'C':
+    		        System.out.print("Here is ur Dew\n");
+    		        break;
+    		    default :
+    		        System.out.print("Invalid\n");
+    	    }
+		}
+		if (a==2){
+		    System.out.println("Choose any\nA - Lays\nB - Bingo\nC - Pringles");
+		    char in = s.next().charAt(0);
+    		switch(in){
+    		    case 'A':
+    		       System.out.print("Here is ur Lays\n");
+    		       break;
+    		    case 'B':
+    		        System.out.print("Here is ur Bingo\n");
+    		        break;
+    		    case 'C':
+    		        System.out.print("Here is ur Pringles\n");
+    		        break;
+    		    default :
+    		        System.out.print("Invalid\n");
+    	    }
+		}
+		if (a==3){
+		    System.out.println("Choose any\nA - Milkybar\nB - Fuse\nC - Kitkat");
+		    char in = s.next().charAt(0);
+    		switch(in){
+    		    case 'A':
+    		       System.out.print("Here is ur Milkybar\n");
+    		       break;
+    		    case 'B':
+    		        System.out.print("Here is ur Fuse\n");
+    		        break;
+    		    case 'C':
+    		        System.out.print("Here is ur Kitkat\n");
+    		        break;
+    		    default :
+    		        System.out.print("Invalid\n");
+    	    }
+		}
+	}
+	}
+}
