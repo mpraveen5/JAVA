@@ -1,0 +1,573 @@
+NUMBER OF CENTURIES & HALF-CENTURIES
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n= s.nextInt();
+		int arr[] = new int[n];
+		int count=0 , Half_count=0;
+		int i=0;
+		for(i=0; i<n; i++){
+		    arr[i]= s.nextInt();
+		}
+		for(i=0; i<n; i++){
+		    if(arr[i] >=50 && arr[i]<100)
+		        Half_count++;
+		    else if(arr[i]>=100)
+		        count++;
+		}
+		if(Half_count==0 && count==0)
+		    System.out.print("No Centuries an Half Centuries");
+		else
+		    System.out.print("Centuries:"+count+"\nHalf Centuries:"+Half_count);
+	}
+}
+
+LOTTERY SYSTEM
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n= s.nextInt();
+		int arr[] = new int[n];
+		int count=0 , Half_count=0;
+		int i=0;
+		for(i=0; i<n; i++){
+		    arr[i]= s.nextInt();
+		}
+		System.out.print("Actual score: ");
+		int score= s.nextInt();
+		int win=1;
+		for(i=0; i<n; i++){
+		    if(arr[i] == score){
+		        System.out.println("lucky prize winner "+win+" at location "+(i+1)+".");
+		        win++;
+		    }
+	    }
+	        if (win == 1)
+		        System.out.print("None of the persons predicted the score correctly.");
+		}
+}
+
+MOVE ZEROS TO THE END
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+        Scanner s= new Scanner(System.in);
+        int size = s.nextInt();
+        int arr2[]=new int [size];
+        
+        int arr[] = new int[size];
+        for (int i=0; i<size; i++){
+            arr[i]=s.nextInt();
+        }
+        int j=0;
+        int count=0;
+        for (int i=0; i<size; i++){
+            if(arr[i]!=0) {
+                arr2[j]=arr[i];
+                j++;
+            }
+            else count++;
+        }
+        for (int k=0; k<count; k++){
+            arr2[j]=0;
+            j++;
+        }
+        for (int p=0; p<size; p++)
+            System.out.print(arr2[p]+" ");
+        
+	}
+}
+
+	(OR)
+
+	for (int i=0; i<size; i++){
+            if(arr[i]==0) count++;
+            else
+                System.out.print(arr[i]+" ");
+        }
+        for (int j=0; j<count; j++){
+            System.out.print("0 ");
+        }
+
+FIND MAXIMUM ELEMENT IN AN ARRAY
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s= new Scanner(System.in);
+        int size = s.nextInt();
+        int result[]=new int [size];
+        
+        int arr[] = new int[size];
+        for (int i=0; i<size; i++){
+            arr[i]=s.nextInt();
+        }
+        
+        int i=0, j=0;
+        int max=arr[0];
+        for (i=1; i<size; i++){
+            if(arr[i]>max) {
+                max=arr[i];
+            }
+        }
+        System.out.print(max);
+	}
+}
+
+FIND THE SECOND MINIMUM ELEMENT IN AN ARRAY
+
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int size = scan.nextInt();
+		int arr[] = new int[size];
+		for(int i=0; i<size; i++)
+			arr[i] = scan.nextInt();
+		int min = Integer.MAX_VALUE, secondmin = arr[0];
+		for(int i = 0 ; i < size ; i++) {
+			if(arr[i] < min) min = arr[i] ;
+		}
+		for(int i=0; i<size; i++)
+			if(arr[i] < secondmin && arr[i]!=min )
+				secondmin = arr[i];
+		System.out.print(secondmin);
+	}
+}
+
+	(OR)
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    int size = scan.nextInt();
+    int arr[] = new int[size];
+    for(int i=0;i<size;i++) 
+    arr[i] = scan.nextInt();
+    int min = Integer.MAX_VALUE , secondmin = arr[0];
+    for(int i = 0 ; i < size ; i++) { //1 2 2 -3 
+      if(arr[i] < min)  { //-3 < 1 
+        secondmin = min ; //1  
+        min = arr[i] ;  //-3 
+      }
+      else if(arr[i] < secondmin && arr[i]!=min) 
+      	secondmin = arr[i]; //2 
+    }
+    System.out.print(secondmin);
+  }
+}
+
+MAXIMUM ELEMENT IN EACH ROW OF A 2D ARRAY
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int r=s.nextInt();
+		int c=s.nextInt();
+		int arr[][]=new int[r][c];
+		for(int i=0; i<r; i++){
+		    for(int j=0; j<c; j++){
+		        arr[i][j] = s.nextInt();
+		    }
+		}
+		int max=arr[0][0];
+		
+		for(int i=0; i<r; i++){
+			
+		    for(int j=0; j<c; j++){
+		        if(arr[i][j]>max)
+		            max=arr[i][j];
+		    }
+		    System.out.println(max);
+		}
+	}
+}
+
+MEAN AND MEDIAN OF AN ARRAY
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int n = s.nextInt();
+	    int arr[] = new int[n];
+	    for (int i =0; i<n; i++)
+	        arr[i] = s.nextInt();
+	    float mean=0, median=0;
+	    Arrays.sort(arr);
+	    for(int i=0; i<n; i++){
+	        mean+=arr[i];
+	        if(n%2!=0 && i==(n/2))
+	            median = arr[i];
+	        else if(i==n/2 || i==n/2-1)
+	            median+=arr[i];
+	    }
+	    mean = (float)mean/n;
+	    if(n%2==0)
+	        median=(float)median/2;
+	    
+	    System.out.printf("Mean:%.2f\nMedian:%.2f", mean,median);
+		//System.out.println("Mean:"+mean+"\nMedian:"+median);
+	}
+}
+
+
+DUPLICATE ELEMENT IN ARRAY
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n = s.nextInt();
+		int arr[] = new int[n];
+		for (int i =0; i<n; i++)
+			arr[i] = s.nextInt();
+		boolean ar[] = new boolean[n];
+		boolean flag;
+
+		for(int i= 0; i<n; i++) {
+			if(!ar[i]) {
+				flag=false;
+				for(int j=i+1; j<n ; j++) {
+					if(arr[i]==arr[j]) {
+						ar[j] = true;
+						flag = true;
+					}
+				}
+				if(flag==true) System.out.println(arr[i]);
+			}
+		}
+	}
+}
+
+UNIQUE ELEMENTS IN ARRAY
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int n = s.nextInt();
+	    int arr[] = new int[n];
+	    for (int i =0; i<n; i++)
+	        arr[i] = s.nextInt();
+	    boolean ar[] = new boolean[n];
+	    boolean flag;
+
+	    for(int i= 0; i<n; i++){
+	        if(!ar[i]){
+	            flag=false;
+	        for(int j=i+1; j<n ; j++){
+	            if(arr[i]==arr[j]){
+	                ar[j] = true;
+	                flag = true;
+	            }
+	        }
+	        if(!flag==true) System.out.println(arr[i]);
+	        }
+	    }
+    }
+}
+
+
+CHECK IF IDENTITY MATRIX
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int n = s.nextInt();
+	    int arr[][] = new int[n][n];
+	    
+	    for (int i =0; i<n; i++){
+	        for(int j=0; j<n; j++){
+	            arr[i][j] = s.nextInt();
+	        }
+	    }
+        boolean flag=false;
+        
+	    for (int i =0; i<n; i++){
+	        for(int j=0; j<n; j++){
+	            if (i==j && arr[i][j]==1) flag=true;
+	            else if(i!=j && arr[i][j]==0) flag=true;
+	            else {
+	                flag=false;
+	                break;
+	            }
+	        }
+	        if(! flag) break;
+	    }
+	    if(flag) System.out.print("YES");
+	   else System.out.print("NO");
+    }
+}
+
+
+FIND THE ROW WITH MAX NO. OF ONE'S
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+	    int r = s.nextInt();
+	    int c = s.nextInt();
+	    int arr[][] = new int[r][c];
+	    
+	    for (int i =0; i<r; i++){
+	        for(int j=0; j<c; j++){
+	            arr[i][j] = s.nextInt();
+	        }
+	    }
+	    int max=0, count=0, max_idx=0;
+	    for (int i =0; i<r; i++){
+	        count =0;
+	        for(int j=0; j<c; j++){
+	            if(arr[i][j]==1) count++;
+	           // System.out.println("count: "+count);
+	        }
+	       // System.out.print(count+" > "+max);
+	        if(count>max){
+	            max=count;
+	            max_idx = i;
+	        } 
+	        //System.out.println("idx: "+max_idx);
+	    }
+	    System.out.print("Row - "+ (max_idx+1));
+	}
+}
+
+FIRST COMMON ELEMENT ACROSS ALL ROWS OF A 2D ARRAY
+
+import java.util.*;
+class Main {
+  public static void main(String[] args){
+    Scanner inn = new Scanner(System.in);
+    int row = inn.nextInt();
+    int col = inn.nextInt();
+    int arr[][] = new int[row][col];
+    for(int i=0;i<row;i++) {
+      for(int j=0;j<col;j++){
+        arr[i][j] = inn.nextInt();
+      }
+    }
+  int common; boolean flag = false , check = false;
+  for(int i=0;i<col;i++) {
+    common = arr[0][i]; 
+    check = true;
+    for(int j=1;j<row;j++){ 
+      flag = false ; 
+      for(int k=0;k<col;k++){ 
+        if(arr[j][k] == common) { 
+          flag = true;
+          break;
+        }
+      }
+      if(!flag) {
+        check = false;
+        break;
+      }
+    }
+    if(check) {
+    System.out.print(common);
+    break;
+    }
+  }
+  if(!check) System.out.print("-1");
+  }
+}
+
+DECIMAL TO BINARY
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int num = sc.nextInt();
+	    int temp = num;
+	    int i=0, count=0;
+	    
+	    while(temp >= (int) Math.pow(2,i)){
+	        count++;
+	        i++;
+	        //System.out.print(count);
+	    }
+	    int n=count;
+	    int arr[] = new int[n];
+	    i=0;
+	   while(num>0){
+	        arr[i] = num%2;
+	        i++;
+	        num = num/2;
+	    }
+	    
+	    for(int j=n-1; j>=0; j--)
+	        System.out.print(arr[j]);
+	}
+}
+
+BINARY TO DECIMAL
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+	    int num = sc.nextInt();
+	    int i=0, r=0, ans=0;
+	    while(num>0){
+	      r=num%10;
+	      if(r==1)
+	        ans = ans+ r*(int)Math.pow(2,i);
+	      i++;
+	      num=num/10;
+	    }
+      System.out.println(ans);
+  }
+}
+
+DECIMAL TO HEXA
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int num = sc.nextInt();
+	    String hexa = "0123456789ABCDEF";
+	    String ans = "";
+	    int r=0;
+	    while(num>0){
+	        r=num%16;
+	        ans = hexa.charAt(r) + ans;
+	        num/=16;
+	    }
+	    System.out.print(ans);
+	}
+}
+
+FINDS THE ROW(S) WITH THE MINIMUM NUMBER OF ZEROS IN A 2D ARRAY
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int r = sc.nextInt();
+	    int c = sc.nextInt();
+	    int arr[][] = new int[r][c];
+	    
+	    for(int i=0; i<r; i++){
+	        for(int j=0; j<c; j++)
+	            arr[i][j] = sc.nextInt();
+	    }
+	    int zeros;
+	    int ar[] = new int[r];
+	    
+	    for(int i=0; i<r; i++){
+	        zeros=0;
+	        for(int j=0; j<c; j++){
+	            if(arr[i][j] == 0)
+	                zeros++;
+	        }
+	        ar[i]=zeros;
+	    }
+	    int min=Integer.MAX_VALUE, idx=0;
+	    for(int i=0; i<r; i++){
+	        if(ar[i]<min && ar[i]>0){
+	            min = ar[i];
+	           // System.out.print(min);
+	        }
+	    }
+	    for(int i=0; i<r; i++){
+	        if(ar[i]==min){
+	            System.out.println("row - "+ (i+1));
+	        }
+	    }
+	}
+}
+
+ROTATING A MATRIX 90° CLOCKWISE
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+        int arr[][] = new int[r][c];
+        for(int i=0; i<r; i++){
+            for(int j=0; j<c; j++)
+                arr[i][j] = sc.nextInt();
+        }
+        int ans[][] = new int[c][r];
+        for(int i=0, j=0; i<r; i++){
+            j=0;
+            for(int k=0; k<c; k++,j++){
+                ans[k][r-1-i] = arr[i][j] ;
+            }
+        }
+        System.out.println("Rotated Matrix (90 degrees clockwise):");
+        for(int i=0; i<c; i++){
+            for(int j=0; j<r; j++){
+                System.out.print(ans[i][j]+" ");
+            }System.out.println();
+        }
+    }
+}
+
+
+MATRIX MULTIPLICATION
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int rA = sc.nextInt();
+        int cA = sc.nextInt();
+        int rB = sc.nextInt();
+        int cB = sc.nextInt();
+        int A[][] = new int[rA][cA];
+        int B[][] = new int[rB][cB];
+        int C[][] = new int[rA][cB];
+        for(int i=0; i<rA; i++){
+            for(int j=0; j<cA; j++)
+                A[i][j] = sc.nextInt();
+        }
+        for(int i=0; i<rB; i++){
+            for(int j=0; j<cB; j++)
+                B[i][j] = sc.nextInt();
+        }
+        for(int i=0; i<rA; i++){
+            for(int j=0; j<cB; j++){
+                for(int k=0; k<cA; k++){
+                    C[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+        System.out.println("Result of Matrix Multiplication:");
+        for(int i=0; i<rA; i++){
+            for(int j=0; j<cB; j++)
+                System.out.print(C[i][j]+" ");
+            System.out.println();
+        }
+    }
+}
+
